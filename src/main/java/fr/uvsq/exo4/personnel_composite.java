@@ -9,43 +9,62 @@ public class personnel_composite  implements InterfacePersonnel{
 	/**
 	 * liste des personnels 
 	 */
-     private  ArrayList<Personnel>  personnes ;
+     private  ArrayList<InterfacePersonnel>  personnes ;
      /**
-      * 
+      * id de groupe de personnels 
       */
-     public personnel_composite(){
-    	 personnes= new ArrayList();
+     private int id;
+     /**
+      * constructeur de personnel_composite 
+      * @param id de groupe 
+      */
+     public personnel_composite(int id ){
+    	 this.id= id ;
+    	 personnes= new ArrayList<InterfacePersonnel>();
      }
      /**
-      * 
-      * @param personnel
+      * ajouter un personnel
+      * @param personnel personnel a ajouter 
       */
-     public void add( Personnel personnel){
+     public void add( InterfacePersonnel personnel){
     	 personnes.add(personnel);
      }
      /**
-      * 
-      * @param personnel
+      * supprimer un personnel
+      * @param personnel personnel a supprimer 
       */
-     public void remove( Personnel personnel ){
-    	 personnes.remove(personnel);
+     public void remove( InterfacePersonnel personnel ){
+    	 if (personnes.contains(personnel))
+    		 personnes.remove(personnel);
+    	 else
+    		 System.out.println("l'element n'existe pas ");
+    		 
+    }
+     /**
+      * 
+      * @return id de groupe personnels
+      */
+     public int getid(){
+    	 return id ;
      }
      /**
-      * affichage 
+      * affichage les informations de tous les personnels du groupe 
       */
-	public void print() {
-		for ( Personnel p :personnes ){
-			System.out.println(p.getId());
-		     }
-		
+	public String print() {
+		String s="" ;
+		for ( InterfacePersonnel p :personnes ){
+			s += " "+p.print() ;
+		}
+		return "id groupe ="+id +" "+ s ;
 	}
+		
 	/**
 	 * 
-	 * @return listePersonnel
+	 * @return listePersonnel liste des personnels 
 	 */
-		public ArrayList<Personnel> getlistePersonnel() {
-			return personnes;
-		}
+	public ArrayList<InterfacePersonnel> getPersonnes() {
+		return personnes;
+	}
 	}
 	
 	

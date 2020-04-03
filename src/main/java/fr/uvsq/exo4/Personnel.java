@@ -2,7 +2,12 @@ package fr.uvsq.exo4;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-
+/**
+ * 
+ * la classe personnel 
+ * @author rabahallah yasmine
+ *
+ */
 public  final class Personnel  implements InterfacePersonnel  {
 	/**
 	 * nom d une personne 
@@ -19,19 +24,13 @@ public  final class Personnel  implements InterfacePersonnel  {
 	/**
 	 * fonctions
 	 */
-	private final  String fonctions ;
+	private final  String fonction ;
 	/**
 	 * la date de naissance
 	 */
 	private  LocalDate  dateDeNaissance ;
-	/**
-	 * 
-	 * id de personne
-	 */
-	private  final int Id ;
-	public int getId()
-	{
-		return this.Id ;}
+	
+	
 	public String getNom() {
 		return nom;
 	}
@@ -42,8 +41,8 @@ public  final class Personnel  implements InterfacePersonnel  {
 		return dateDeNaissance;
 	}
 	
-	public String getFonctions() {
-		return fonctions;
+	public String getFonction() {
+		return fonction;
 	}
 	public ArrayList<String> getTelephone() {
 		return telephone;
@@ -52,40 +51,63 @@ public  final class Personnel  implements InterfacePersonnel  {
 		
 		this.nom =  builder.nom;
 		this.prenom =  builder.prenom;
-		this.fonctions =  builder.fonctions;
+		this.fonction =  builder.fonction;
 		this.dateDeNaissance= builder.dateDeNaissance;
 		this.telephone=builder.telephone ;
-		this.Id=builder.Id ;
+		
 	}
 	
 	public static class Builder 
-    {   private int Id=-1 ;
+    {   
+		/**
+		 * nom de la personne 
+		 */
         private final String nom;
+        /**
+         * prenom de la personne
+         */
         private final String prenom;
-        private final String fonctions;
+        /**
+         * fonction de la personne
+         */
+        private final String fonction;
+        /**
+    	 * la date de naissance
+    	 */
         private LocalDate dateDeNaissance; 
-        
+        /**
+         * numero de tel de la personne
+         */
 
 		private  ArrayList<String> telephone = new ArrayList<String>();
         
-        public Builder(String nom, String prenom , String fonctions) {
+        public Builder(String nom, String prenom , String fonction) {
             this.nom=nom ;
             this.prenom=prenom;
-            this.fonctions=fonctions ;
+            this.fonction=fonction ;
         }
+        /**
+         * 
+         * @param dateDeNaissance date
+         * @return instance
+         */
         public Builder date(LocalDate  dateDeNaissance) {
             this. dateDeNaissance =  dateDeNaissance;
             return this;
         }
-        public Builder Id(int  Id) {
-            this.Id =  Id;
-            return this;
-        }
+        /**
+         * 
+         * @param telephone number de telephone
+         * @return instance
+         */
         public Builder telephone(String  telephone) {
             this.telephone.add(telephone);
             return this;
         }
-        
+        /**
+         * 
+         * @return new objet personnel
+         */
         public Personnel build ( ) {
 			 return new Personnel ( this ) ;
 			 }
@@ -93,9 +115,13 @@ public  final class Personnel  implements InterfacePersonnel  {
 		
 	}
 
-	public void print() {
-		 System.out.println("ID:"+Id );
+	public String print() {
+		   return "name " + this.getNom();
+
 		
+	}
+	public ArrayList<InterfacePersonnel> getPersonnes() {
+		return null;
 	}
 
 }
