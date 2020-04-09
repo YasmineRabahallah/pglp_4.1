@@ -40,7 +40,7 @@ public class TestBuilder {
 	public void test7(){
 		Personnel p1 = new Personnel.Builder("rabahallah", "lamia","direct").date(LocalDate.of(1997, Month.DECEMBER, 12)).build();
 		Personnel p2 = new Personnel.Builder("rabahallah", "yasmine","chargé de mission").telephone("0770662125").build();
-		personnel_composite g = new personnel_composite(2);
+		Personnelcomposite g = new Personnelcomposite(2);
 		g.add(p1);
 		g.add(p2);
 		g.print();

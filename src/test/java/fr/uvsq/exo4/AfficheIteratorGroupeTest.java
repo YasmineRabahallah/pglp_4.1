@@ -10,16 +10,16 @@ public class AfficheIteratorGroupeTest {
 	@Test
 	public void test1(){
 		
-		personnel_composite g1 = new personnel_composite(1);
-		personnel_composite g2 = new personnel_composite(2);
-		personnel_composite g3 = new personnel_composite(3);
-		personnel_composite g4 = new personnel_composite(4);
-		personnel_composite g5 = new personnel_composite(5);
-		personnel_composite g6 = new personnel_composite(6);
-		personnel_composite g7 = new personnel_composite(7);
-		personnel_composite g8 = new personnel_composite(8);
-		personnel_composite g9 = new personnel_composite(9);
-		personnel_composite g10 = new personnel_composite(10);
+		Personnelcomposite g1 = new Personnelcomposite(1);
+		Personnelcomposite g2 = new Personnelcomposite(2);
+		Personnelcomposite g3 = new Personnelcomposite(3);
+		Personnelcomposite g4 = new Personnelcomposite(4);
+		Personnelcomposite g5 = new Personnelcomposite(5);
+		Personnelcomposite g6 = new Personnelcomposite(6);
+		Personnelcomposite g7 = new Personnelcomposite(7);
+		Personnelcomposite g8 = new Personnelcomposite(8);
+		Personnelcomposite g9 = new Personnelcomposite(9);
+		Personnelcomposite g10 = new Personnelcomposite(10);
 		g1.add(g2);
 		g1.add(g3);
 		g1.add(g4);
@@ -30,7 +30,7 @@ public class AfficheIteratorGroupeTest {
 		g3.add(g8);
 		g4.add(g9);
 		g5.add(g10);
-		 ArrayList<InterfacePersonnel> list = new ArrayList<InterfacePersonnel>() ;
+		 ArrayList<Ipersonnel> list = new ArrayList<Ipersonnel>() ;
 		  list.add(g1);
 		  list.add(g2);
 		  list.add(g3);
@@ -41,11 +41,11 @@ public class AfficheIteratorGroupeTest {
 		  list.add(g8);
 		  list.add(g9);
 		  list.add(g10);
-		  ArrayList<InterfacePersonnel> list2 = new ArrayList<InterfacePersonnel>() ;
+		  ArrayList<Ipersonnel> list2 = new ArrayList<Ipersonnel>() ;
 		  AffichageParGroupe af = new  AffichageParGroupe(g1);
 			Iterator it = af.getIterator();
 			do{
-				InterfacePersonnel pr = (InterfacePersonnel)it.Next();
+				Ipersonnel pr = (Ipersonnel)it.next();
 				list2.add(pr);
 			}while (it.hasNext()) ;
 		 
@@ -54,16 +54,16 @@ public class AfficheIteratorGroupeTest {
 	@Test
 	public void test2(){
 		
-		personnel_composite g1 = new personnel_composite(1);
-		personnel_composite g2 = new personnel_composite(2);
-		personnel_composite g3 = new personnel_composite(3);
-		personnel_composite g4 = new personnel_composite(4);
-		personnel_composite g5 = new personnel_composite(5);
-		personnel_composite g6 = new personnel_composite(6);
-		personnel_composite g7 = new personnel_composite(7);
-		personnel_composite g8 = new personnel_composite(8);
-		personnel_composite g9 = new personnel_composite(9);
-		personnel_composite g10 = new personnel_composite(10);
+		Personnelcomposite g1 = new Personnelcomposite(1);
+		Personnelcomposite g2 = new Personnelcomposite(2);
+		Personnelcomposite g3 = new Personnelcomposite(3);
+		Personnelcomposite g4 = new Personnelcomposite(4);
+		Personnelcomposite g5 = new Personnelcomposite(5);
+		Personnelcomposite g6 = new Personnelcomposite(6);
+		Personnelcomposite g7 = new Personnelcomposite(7);
+		Personnelcomposite g8 = new Personnelcomposite(8);
+		Personnelcomposite g9 = new Personnelcomposite(9);
+		Personnelcomposite g10 = new Personnelcomposite(10);
 		g7.add(g1);
 		g7.add(g5);
 		g7.add(g3);
@@ -73,7 +73,7 @@ public class AfficheIteratorGroupeTest {
 		g3.add(g8);
 		g2.add(g9);
 		g2.add(g10);
-		ArrayList<InterfacePersonnel> list = new ArrayList<InterfacePersonnel>() ;
+		ArrayList<Ipersonnel> list = new ArrayList<Ipersonnel>() ;
 		  list.add(g7);
 		  list.add(g1);
 		  list.add(g5);
@@ -84,11 +84,11 @@ public class AfficheIteratorGroupeTest {
 		  list.add(g8);
 		  list.add(g9);
 		  list.add(g10);
-		  ArrayList<InterfacePersonnel> list2 = new ArrayList<InterfacePersonnel>() ;
+		  ArrayList<Ipersonnel> list2 = new ArrayList<Ipersonnel>() ;
 		  AffichageParGroupe af = new  AffichageParGroupe(g7);
 				Iterator it = af.getIterator();
 				do{
-					InterfacePersonnel pr = (InterfacePersonnel)it.Next();
+					Ipersonnel pr = (Ipersonnel)it.next();
 					list2.add(pr);
 				}while (it.hasNext()) ;
 			 
